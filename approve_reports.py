@@ -48,7 +48,6 @@ try:
       try:
         params = p.urlencode( { 'id': t, 'uh': reports['data']['modhash'] } )
         f = r.urlopen(approveurl, params.encode('utf8'))
-        output = json.loads(f.read().decode())
         f.close()
       except HTTPError as e:
         print("HTTP error %s on %s" % (e.code, t))
